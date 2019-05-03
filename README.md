@@ -2,11 +2,11 @@
 
 ### 1. Install Gridsome CLI tool if you don't have
 
-`npm install --global @gridsome/cli`
+`yarn add global @gridsome/cli`
 
-### 2. Create a Gridsome project
+### 2. Clone the repo, and run:
 
-1. `gridsome create my-gridsome-site` to install default starter
-2. `cd my-gridsome-site` to open the folder
-3. `gridsome develop` to start a local dev server at `http://localhost:8080`
-4. Happy coding 🎉🙌
+1. `yarn install`
+
+### 3. Local development, and run:
+1. `gridsome develop` to start a local dev server at `http://localhost:8080`
