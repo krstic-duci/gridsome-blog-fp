@@ -2,7 +2,7 @@
 title: New Blog Post by Duca
 date: 2019-06-06T22:40:48.680Z
 description: Really Awesome Post by Ingsters
-image: /static/uploads/rsz_dusanka1_8.jpg
+image: /cms-images/rsz_dusanka1_8.jpg
 ---
 ## The standard Lorem Ipsum passage, used since the 1500s
 
