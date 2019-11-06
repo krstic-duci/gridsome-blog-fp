@@ -13,15 +13,6 @@ module.exports = {
         typeName: 'BlogPost',
         route: 'blog/:slug'
       }
-    },
-    {
-      use: '@gridsome/plugin-google-analytics',
-      options: {
-        id: 'UA-151654148-1',
-        debug: {
-          sendHitTask: true
-        }
-      }
     }
   ]
 }
