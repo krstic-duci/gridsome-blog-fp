@@ -10,13 +10,10 @@ export default function (Vue, { head, router, isClient }) {
     id: 'UA-151654148-1',
     disabled: function () {
       var isAnalyticLoaded;
-      if (isClient) {
-        console.log(isClient, 'ne ne')
-        if (localStorage.getItem('isAnalyticLoaded') === 'true') {
-          isAnalyticLoaded = false
-        } else {
-          isAnalyticLoaded = true
-        }
+      if (localStorage.getItem('isAnalyticLoaded') === 'true') {
+        isAnalyticLoaded = false
+      } else {
+        isAnalyticLoaded = true
       }
       return isAnalyticLoaded
     },

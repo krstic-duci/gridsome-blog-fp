@@ -3,7 +3,7 @@
     <p>
       this is a footer
     </p>
-    <div class="test">
+    <div class="test" v-if="isScriptLoaded">
       <button class="test-agree" @click="enableAnalytics">
         I Agree
       </button>
@@ -17,6 +17,11 @@
 <script>
 export default {
   name: 'TheFooter',
+  data () {
+    return {
+      isScriptLoaded: true
+    }
+  },
   mounted () {
     this.isEnabled()
   },
