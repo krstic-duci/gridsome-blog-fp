@@ -1,10 +1,10 @@
 <template>
   <article class="article">
-    <g-link to="/blog">Blog</g-link>
+    <!-- <g-link to="/blog">Blog</g-link>
     <h1>{{ $page.blogPost.title }}</h1>
     <span>{{ $page.blogPost.date }}</span>
     <g-image :src="$page.blogPost.image" :alt="$page.blogPost.title"/>
-    <div class="content" v-html="$page.blogPost.content"></div>
+    <div class="content" v-html="$page.blogPost.content"></div> -->
   </article>
 </template>
 
@@ -18,15 +18,15 @@ export default {
 }
 </script>
 
-<page-query>
-  query BlogPost ($path: String!) {
-    blogPost (path: $path) {
-      title
-      date (format: "D MMMM, YYYY")
-      content
-    }
-  }
-</page-query>
+// <page-query>
+//   query BlogPost ($path: String!) {
+//     blogPost (path: $path) {
+//       title
+//       date (format: "D MMMM, YYYY")
+//       content
+//     }
+//   }
+// </page-query>
 
 <style scoped>
 
