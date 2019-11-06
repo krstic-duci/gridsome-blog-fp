@@ -14,19 +14,14 @@
 
 <script>
 export default {
-  metaInfo: {
-    title: 'Gridsome Blog Home'
-  }
+  
 }
-</script>
-
-
 // <page-query>
 //   query Home ($page: Int) {
 //     allBlogPost (page: $page) {
 //       edges {
 //         node {
-//           _id
+//           id
 //           title
 //           date (format: "D MMMM, YYYY")
 //           description
@@ -36,6 +31,7 @@ export default {
 //     }
 //   }
 // </page-query>
+</script>
 
 <style scoped>
 

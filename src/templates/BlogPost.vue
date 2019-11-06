@@ -10,23 +10,19 @@
 
 <script>
 export default {
-  metaInfo () {
-    return {
-      title: this.$page.blogPost.title
-    }
-  }
+  
 }
-</script>
-
 // <page-query>
 //   query BlogPost ($path: String!) {
 //     blogPost (path: $path) {
 //       title
 //       date (format: "D MMMM, YYYY")
 //       content
+//       image
 //     }
 //   }
 // </page-query>
+</script>
 
 <style scoped>
 
