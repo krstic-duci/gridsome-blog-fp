@@ -11,10 +11,6 @@ export default function (Vue, { head, router, isClient }) {
     autoTracking: {
       screenview: true
     },
-    disabled: false,
-    ready () {
-      console.log('yeah')
-    },
     router
   })
 }
