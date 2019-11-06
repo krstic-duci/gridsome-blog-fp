@@ -3,13 +3,7 @@ import VueAnalytics from 'vue-analytics';
 import { Plugin } from 'vue-fragment';
 
 export default function (Vue, { head, router, isClient, isServer }) {
-  const isAnalyticLoaded = () => {
-    if (localStorage.getItem('isAnalyticLoaded') === 'true') {
-      return false
-    } else if (localStorage.getItem('isAnalyticLoaded') === 'false') {
-      return true
-    }
-  }
+  let isAnalyticLoaded;
 
   Vue.use(Plugin)
   Vue.component('layout-wrapper', LayoutWrapper)
@@ -21,9 +15,17 @@ export default function (Vue, { head, router, isClient, isServer }) {
     disabled: function () {
       if (isClient) {
         console.log('brm brm');
-        console.log(isAnalyticLoaded());
+        console.log(isAnalyticLoaded);
+        (function() {
+          if (localStorage.getItem('isAnalyticLoaded') === 'true') {
+            return isAnalyticLoaded = false
+          } else if (localStorage.getItem('isAnalyticLoaded') === 'false') {
+            return isAnalyticLoaded = true
+          }
+        })()
       }
-      return isAnalyticLoaded()
+      console.log(isAnalyticLoaded);
+      return isAnalyticLoaded
     },
     debug: {
       sendHitTask: true
