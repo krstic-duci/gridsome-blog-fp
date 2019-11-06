@@ -2,24 +2,7 @@ import LayoutWrapper from '~/layouts/LayoutWrapper.vue';
 import VueAnalytics from 'vue-analytics';
 import { Plugin } from 'vue-fragment';
 
-export default function (Vue, { head, router, isClient, isServer }) {
-  var isAnalyticLoaded;
-  if (process.isClient) {
-    console.log(process.isClient, 'ne ne')
-    if (localStorage.getItem('isAnalyticLoaded') === 'true') {
-      return isAnalyticLoaded = false
-    } else if (localStorage.getItem('isAnalyticLoaded') === 'false') {
-      return isAnalyticLoaded = true
-    }
-  }
-  if (isServer) {
-    console.log(process.isServer, 'ovde')
-    // if (localStorage.getItem('isAnalyticLoaded') === 'true') {
-    //   return isAnalyticLoaded = false
-    // } else if (localStorage.getItem('isAnalyticLoaded') === 'false') {
-    //   return isAnalyticLoaded = true
-    // }
-  }
+export default function (Vue, { head, router, isClient }) {
 
   Vue.use(Plugin)
   Vue.component('layout-wrapper', LayoutWrapper)
@@ -29,6 +12,15 @@ export default function (Vue, { head, router, isClient, isServer }) {
       screenview: true
     },
     disabled: function () {
+      var isAnalyticLoaded;
+      if (isClient) {
+        console.log(isClient, 'ne ne')
+        if (localStorage.getItem('isAnalyticLoaded') === 'true') {
+          isAnalyticLoaded = false
+        } else if (localStorage.getItem('isAnalyticLoaded') === 'false') {
+          isAnalyticLoaded = true
+        }
+      }
       return isAnalyticLoaded
     },
     debug: {
