@@ -24,7 +24,7 @@ export default function (Vue, { head, router, isClient }) {
       return false
     },
     debug: {
-      sendHitTask: true
+      sendHitTask: false
     },
     ready () {
       console.log('yeah')
