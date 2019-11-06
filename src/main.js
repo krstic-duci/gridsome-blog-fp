@@ -14,7 +14,7 @@ export default function (Vue, { head, router, isClient }) {
         console.log(isClient, 'ne ne')
         if (localStorage.getItem('isAnalyticLoaded') === 'true') {
           isAnalyticLoaded = false
-        } else if (localStorage.getItem('isAnalyticLoaded') === 'false') {
+        } else {
           isAnalyticLoaded = true
         }
       }

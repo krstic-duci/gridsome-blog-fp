@@ -18,13 +18,17 @@
 export default {
   name: 'TheFooter',
   mounted () {
-    if (localStorage.getItem('isAnalyticLoaded') === 'true') {
-      return
-    } else {
-      localStorage.setItem('isAnalyticLoaded', 'false')
-    }
+    this.isEnabled()
   },
   methods: {
+    isEnabled () {
+      if (localStorage.getItem('isAnalyticLoaded') === 'true') {
+        localStorage.setItem('isAnalyticLoaded', 'true')
+        return
+      } else {
+        localStorage.setItem('isAnalyticLoaded', 'false')
+      }
+    },
     enableAnalytics () {
       this.$ga.enable()
       localStorage.setItem('isAnalyticLoaded', 'true')
