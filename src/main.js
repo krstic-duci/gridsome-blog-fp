@@ -4,13 +4,22 @@ import { Plugin } from 'vue-fragment';
 
 export default function (Vue, { head, router, isClient, isServer }) {
   var isAnalyticLoaded;
-  (function() {
-    if (localStorage.getItem('isAnalyticLoaded') === 'true') {
-      return isAnalyticLoaded = false
-    } else if (localStorage.getItem('isAnalyticLoaded') === 'false') {
-      return isAnalyticLoaded = true
-    }
-  })()
+  if (isClient) {
+    console.log(process.isClient)
+    // if (localStorage.getItem('isAnalyticLoaded') === 'true') {
+    //   return isAnalyticLoaded = false
+    // } else if (localStorage.getItem('isAnalyticLoaded') === 'false') {
+    //   return isAnalyticLoaded = true
+    // }
+  }
+  if (isServer) {
+    console.log(process.isServer)
+    // if (localStorage.getItem('isAnalyticLoaded') === 'true') {
+    //   return isAnalyticLoaded = false
+    // } else if (localStorage.getItem('isAnalyticLoaded') === 'false') {
+    //   return isAnalyticLoaded = true
+    // }
+  }
 
   Vue.use(Plugin)
   Vue.component('layout-wrapper', LayoutWrapper)
@@ -20,7 +29,7 @@ export default function (Vue, { head, router, isClient, isServer }) {
       screenview: true
     },
     disabled: function () {
-      return isAnalyticLoaded
+      return true
     },
     debug: {
       sendHitTask: true
