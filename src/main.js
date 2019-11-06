@@ -5,7 +5,7 @@ import { Plugin } from 'vue-fragment';
 export default function (Vue, { head, router, isClient, isServer }) {
   var isAnalyticLoaded;
   if (isClient) {
-    console.log(process.isClient)
+    console.log(process.isClient, 'ne ne')
     // if (localStorage.getItem('isAnalyticLoaded') === 'true') {
     //   return isAnalyticLoaded = false
     // } else if (localStorage.getItem('isAnalyticLoaded') === 'false') {
@@ -13,7 +13,7 @@ export default function (Vue, { head, router, isClient, isServer }) {
     // }
   }
   if (isServer) {
-    console.log(process.isServer)
+    console.log(process.isServer, 'ovde')
     // if (localStorage.getItem('isAnalyticLoaded') === 'true') {
     //   return isAnalyticLoaded = false
     // } else if (localStorage.getItem('isAnalyticLoaded') === 'false') {
