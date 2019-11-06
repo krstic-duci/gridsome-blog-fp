@@ -12,16 +12,16 @@ export default function (Vue, { head, router, isClient }) {
       screenview: true
     },
     disabled: function () {
-      var isAnalyticLoaded;
-      if (isClient) {
-        console.log(isClient, 'ne ne')
-        if (localStorage.getItem('isAnalyticLoaded') === 'true') {
-          isAnalyticLoaded = false
-        } else if (localStorage.getItem('isAnalyticLoaded') === 'false') {
-          isAnalyticLoaded = true
-        }
-      }
-      return isAnalyticLoaded
+      // var isAnalyticLoaded;
+      // if (isClient) {
+      //   console.log(isClient, 'ne ne')
+      //   if (localStorage.getItem('isAnalyticLoaded') === 'true') {
+      //     isAnalyticLoaded = false
+      //   } else if (localStorage.getItem('isAnalyticLoaded') === 'false') {
+      //     isAnalyticLoaded = true
+      //   }
+      // }
+      return false
     },
     debug: {
       sendHitTask: true
